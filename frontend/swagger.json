@@ -1,0 +1,1948 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Jewelry APIs",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080"
+        },
+        {
+            "url": "http://157.230.33.37:8080"
+        }
+    ],
+    "paths": {
+        "/products/{id}": {
+            "get": {
+                "tags": [
+                    "Product"
+                ],
+                "operationId": "getProductDetails",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Product"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Product"
+                ],
+                "operationId": "updateProduct",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductRequestUpdate"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Product"
+                ],
+                "operationId": "deleteProduct",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/metals/{metal-type-id}": {
+            "put": {
+                "tags": [
+                    "Metal"
+                ],
+                "operationId": "updateMetal",
+                "parameters": [
+                    {
+                        "name": "metal-type-id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MetaUpdateRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Metal"
+                ],
+                "operationId": "deleteMetal",
+                "parameters": [
+                    {
+                        "name": "metal-type-id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/{id}": {
+            "put": {
+                "tags": [
+                    "Account"
+                ],
+                "operationId": "updateAccount",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InputValues"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OutputValues"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Account"
+                ],
+                "operationId": "deleteAccount",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OutputValues"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/warranties": {
+            "post": {
+                "tags": [
+                    "Warranty"
+                ],
+                "operationId": "createWarranty",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InputValues"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OutputValues"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/products/product": {
+            "post": {
+                "tags": [
+                    "Product"
+                ],
+                "operationId": "insertNewProduct",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "imgFiles",
+                                    "productRequest"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "productRequest": {
+                                        "$ref": "#/components/schemas/ProductRequest"
+                                    },
+                                    "imgFiles": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "imgFiles",
+                                    "productRequest"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "productRequest": {
+                                        "$ref": "#/components/schemas/ProductRequest"
+                                    },
+                                    "imgFiles": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/metals/metal": {
+            "post": {
+                "tags": [
+                    "Metal"
+                ],
+                "operationId": "insertNewMetal",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MetalCreateRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/invoices/invoice": {
+            "post": {
+                "tags": [
+                    "Invoice"
+                ],
+                "operationId": "createSellInvoice",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateInvoiceSellPayload"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/auth/register": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "operationId": "register",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegisterRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/refresh-token": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "operationId": "refreshToken",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/logout": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "operationId": "logout",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/authenticate": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "operationId": "authenticate",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthenticationRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthenticationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "operationId": "searchUser",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "accountId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OutputValues"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "operationId": "createAccount",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InputValues"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OutputValues"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/products/filter-options": {
+            "get": {
+                "tags": [
+                    "Product"
+                ],
+                "operationId": "getAllFilterOptions",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/products/all": {
+            "get": {
+                "tags": [
+                    "Product"
+                ],
+                "operationId": "getAllProductsWithSearchSortFilter",
+                "parameters": [
+                    {
+                        "name": "searchKeyword",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "productType",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "uniqueItems": true,
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metalGroup",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "uniqueItems": true,
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metalTypes",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "uniqueItems": true,
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gemstoneType",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "uniqueItems": true,
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "saleStatus",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "uniqueItems": true,
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "pageNo",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Product"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/metals/{metal-type-name}": {
+            "get": {
+                "tags": [
+                    "Metal"
+                ],
+                "operationId": "getMetalTypeInDetails",
+                "parameters": [
+                    {
+                        "name": "metal-type-name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetalType"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/metals/silver-price-rate": {
+            "get": {
+                "tags": [
+                    "Metal"
+                ],
+                "operationId": "getMetalSilverPriceRate",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SilverPriceRateDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/metals/gold-price-rate": {
+            "get": {
+                "tags": [
+                    "Metal"
+                ],
+                "operationId": "getMetalGoldPriceRate",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GoldPriceRateDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/metals/all": {
+            "get": {
+                "tags": [
+                    "Metal"
+                ],
+                "operationId": "getAllMetalTypes",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/metals/all/on-monitor": {
+            "get": {
+                "tags": [
+                    "Metal"
+                ],
+                "operationId": "getAllMetalTypesOnMonitor",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/invoices/{id}": {
+            "get": {
+                "tags": [
+                    "Invoice"
+                ],
+                "operationId": "getInvoiceIndetails",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Invoice"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Invoice"
+                ],
+                "operationId": "deleteInvoice",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/invoices/": {
+            "get": {
+                "tags": [
+                    "Invoice"
+                ],
+                "operationId": "getAllInvoicesWithPagination",
+                "parameters": [
+                    {
+                        "name": "customerName",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "transactionDateFrom",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "transactionDateEnd",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    {
+                        "name": "transactionStatus",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "uniqueItems": true,
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "PENDING_PAYMENT",
+                                    "PAID",
+                                    "CANCELLED"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "Optional[DESC]",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "pageNo",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ProductPriceDto": {
+                "type": "object",
+                "properties": {
+                    "productPriceId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalMetalCost": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "totalGemstoneCost": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "laborCost": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "markupPercentage": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "salePrice": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "ProductRequestUpdate": {
+                "required": [
+                    "productId",
+                    "productName",
+                    "productPrice",
+                    "productType",
+                    "saleStatus",
+                    "unitMeasure"
+                ],
+                "type": "object",
+                "properties": {
+                    "productId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "productName": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "productType": {
+                        "type": "string"
+                    },
+                    "unitMeasure": {
+                        "type": "string"
+                    },
+                    "saleStatus": {
+                        "type": "string"
+                    },
+                    "imageUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "productPrice": {
+                        "$ref": "#/components/schemas/ProductPriceDto"
+                    }
+                }
+            },
+            "MetaUpdateRequest": {
+                "required": [
+                    "metalPrice",
+                    "metalType"
+                ],
+                "type": "object",
+                "properties": {
+                    "metalType": {
+                        "$ref": "#/components/schemas/MetalTypeUpdateDto"
+                    },
+                    "metalPrice": {
+                        "$ref": "#/components/schemas/MetalPriceUpdateDto"
+                    }
+                }
+            },
+            "MetalPriceUpdateDto": {
+                "type": "object",
+                "properties": {
+                    "profitSell": {
+                        "type": "number",
+                        "description": "Percent rate of profit sell",
+                        "format": "double",
+                        "example": 10.5
+                    },
+                    "profitBuy": {
+                        "type": "number",
+                        "description": "Percent rate of profit buy",
+                        "format": "double",
+                        "example": 8.5
+                    },
+                    "metalPriceSpot": {
+                        "minimum": 1000,
+                        "type": "number",
+                        "description": "Spot price of the metal in VND per gram",
+                        "format": "double",
+                        "example": 500000
+                    }
+                }
+            },
+            "MetalTypeUpdateDto": {
+                "type": "object",
+                "properties": {
+                    "metalGroupName": {
+                        "type": "string",
+                        "description": "The metal group name",
+                        "example": "vàng"
+                    },
+                    "isAutoUpdatePrice": {
+                        "type": "boolean",
+                        "description": "Allow metal auto update price through fetch api. Default is false",
+                        "example": false
+                    },
+                    "isOnMonitor": {
+                        "type": "boolean",
+                        "description": "Allow metal show price on monitor. Default is false",
+                        "example": false
+                    }
+                }
+            },
+            "InputValues": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "ADMIN",
+                            "MANAGER",
+                            "STAFF",
+                            "CUSTOMER"
+                        ]
+                    },
+                    "fullname": {
+                        "type": "string"
+                    },
+                    "phonenumber": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            },
+            "OutputValues": {
+                "type": "object",
+                "properties": {
+                    "accountId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "ADMIN",
+                            "MANAGER",
+                            "STAFF",
+                            "CUSTOMER"
+                        ]
+                    },
+                    "fullname": {
+                        "type": "string"
+                    },
+                    "phonenumber": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GemstoneDto": {
+                "required": [
+                    "gemstoneName"
+                ],
+                "type": "object",
+                "properties": {
+                    "gemstoneId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "gemstoneName": {
+                        "type": "string"
+                    },
+                    "stoneColor": {
+                        "type": "string"
+                    },
+                    "stoneCut": {
+                        "type": "string"
+                    },
+                    "stoneClarity": {
+                        "type": "string"
+                    },
+                    "materialWeight": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "materialSize": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "MetalTypeDto": {
+                "required": [
+                    "materialWeight",
+                    "metalTypeName"
+                ],
+                "type": "object",
+                "properties": {
+                    "metalTypeId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "metalTypeName": {
+                        "type": "string"
+                    },
+                    "metalPurity": {
+                        "maximum": 1,
+                        "minimum": 0,
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "metalGroupName": {
+                        "type": "string"
+                    },
+                    "materialWeight": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "materialSize": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "ProductRequest": {
+                "required": [
+                    "metalType",
+                    "name",
+                    "productPrice",
+                    "productType",
+                    "saleStatus",
+                    "unitMeasure"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "maxLength": 255,
+                        "minLength": 5,
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "productType": {
+                        "type": "string"
+                    },
+                    "unitMeasure": {
+                        "type": "string"
+                    },
+                    "saleStatus": {
+                        "type": "string"
+                    },
+                    "gemstones": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GemstoneDto"
+                        }
+                    },
+                    "metalType": {
+                        "$ref": "#/components/schemas/MetalTypeDto"
+                    },
+                    "productPrice": {
+                        "$ref": "#/components/schemas/ProductPriceDto"
+                    }
+                }
+            },
+            "MetalCreateRequest": {
+                "required": [
+                    "metalPrice",
+                    "metalType"
+                ],
+                "type": "object",
+                "properties": {
+                    "metalType": {
+                        "$ref": "#/components/schemas/MetalTypeCreateDto"
+                    },
+                    "metalPrice": {
+                        "$ref": "#/components/schemas/MetalPriceCreateDto"
+                    }
+                }
+            },
+            "MetalPriceCreateDto": {
+                "required": [
+                    "metalPriceSpot",
+                    "profitBuy",
+                    "profitSell"
+                ],
+                "type": "object",
+                "properties": {
+                    "profitSell": {
+                        "type": "number",
+                        "description": "Percent rate of profit sell",
+                        "format": "double",
+                        "example": 10.5
+                    },
+                    "profitBuy": {
+                        "type": "number",
+                        "description": "Percent rate of profit buy",
+                        "format": "double",
+                        "example": 8.5
+                    },
+                    "metalPriceSpot": {
+                        "minimum": 1000,
+                        "type": "number",
+                        "description": "Spot price of the metal in VND per gram",
+                        "format": "double",
+                        "example": 500000
+                    }
+                }
+            },
+            "MetalTypeCreateDto": {
+                "required": [
+                    "metalGroupName",
+                    "metalTypeName"
+                ],
+                "type": "object",
+                "properties": {
+                    "metalTypeName": {
+                        "type": "string",
+                        "description": "The name of metal",
+                        "example": "Metal type name"
+                    },
+                    "metalPurity": {
+                        "maximum": 100,
+                        "type": "number",
+                        "description": "Percentage of purity",
+                        "format": "double",
+                        "example": 99.99
+                    },
+                    "metalGroupName": {
+                        "type": "string",
+                        "description": "The metal group name",
+                        "example": "vàng"
+                    },
+                    "isAutoUpdatePrice": {
+                        "type": "boolean",
+                        "description": "Allow metal auto update price through fetch api. Default is false",
+                        "example": false
+                    },
+                    "isOnMonitor": {
+                        "type": "boolean",
+                        "description": "Allow metal show price on monitor. Default is false",
+                        "example": false
+                    }
+                }
+            },
+            "CreateInvoiceSellPayload": {
+                "required": [
+                    "invoiceItems",
+                    "paymentMethod",
+                    "transactionType"
+                ],
+                "type": "object",
+                "properties": {
+                    "transactionType": {
+                        "type": "string",
+                        "description": "Type of the transaction: bán ra, mua vào",
+                        "example": "SELL",
+                        "enum": [
+                            "SELL",
+                            "PURCHASE"
+                        ]
+                    },
+                    "customerName": {
+                        "type": "string"
+                    },
+                    "customerPhone": {
+                        "type": "string"
+                    },
+                    "invoiceItems": {
+                        "type": "array",
+                        "description": "List of items in the invoice",
+                        "items": {
+                            "$ref": "#/components/schemas/InvoiceItemPayload"
+                        }
+                    },
+                    "paymentMethod": {
+                        "type": "string",
+                        "description": "Method of payment",
+                        "enum": [
+                            "CASH",
+                            "EWALLET_VNPAY"
+                        ]
+                    }
+                }
+            },
+            "InvoiceItemPayload": {
+                "required": [
+                    "productId",
+                    "unitMeasure"
+                ],
+                "type": "object",
+                "properties": {
+                    "productId": {
+                        "type": "integer",
+                        "description": "ID of the product",
+                        "format": "int32"
+                    },
+                    "unitMeasure": {
+                        "type": "string",
+                        "description": "Unit measure of the product",
+                        "example": "chiếc"
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "description": "Quantity of the product",
+                        "format": "float",
+                        "example": 1
+                    }
+                },
+                "description": "Payload for an individual invoice item"
+            },
+            "RegisterRequest": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "fullname": {
+                        "type": "string"
+                    },
+                    "phonenumber": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AuthenticationRequest": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AuthenticationResponse": {
+                "type": "object",
+                "properties": {
+                    "access_token": {
+                        "type": "string"
+                    },
+                    "refresh_token": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "ADMIN",
+                            "MANAGER",
+                            "STAFF",
+                            "CUSTOMER"
+                        ]
+                    }
+                }
+            },
+            "GemStone": {
+                "type": "object",
+                "properties": {
+                    "gemstoneId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "gemstoneName": {
+                        "type": "string"
+                    },
+                    "stoneColor": {
+                        "type": "string"
+                    },
+                    "stoneCut": {
+                        "type": "string"
+                    },
+                    "stoneClarity": {
+                        "type": "string"
+                    }
+                }
+            },
+            "MetalPriceRate": {
+                "type": "object",
+                "properties": {
+                    "metalPriceRateId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "metalTypeId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "profitSell": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "profitBuy": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "exchangeRate": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "internationalPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "metalPriceSpot": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "sellingPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "buyingPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "effectiveDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "MetalType": {
+                "type": "object",
+                "properties": {
+                    "metalTypeId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "metalTypeName": {
+                        "type": "string"
+                    },
+                    "metalPurity": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "metalGroupName": {
+                        "type": "string"
+                    },
+                    "isAutoUpdatePrice": {
+                        "type": "boolean"
+                    },
+                    "isOnMonitor": {
+                        "type": "boolean"
+                    },
+                    "currentMetalPriceRate": {
+                        "$ref": "#/components/schemas/MetalPriceRate"
+                    }
+                }
+            },
+            "Product": {
+                "type": "object",
+                "properties": {
+                    "productId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "productType": {
+                        "type": "string"
+                    },
+                    "unitMeasure": {
+                        "type": "string"
+                    },
+                    "saleStatus": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedBy": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "productMaterials": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductMaterial"
+                        }
+                    },
+                    "productPrice": {
+                        "$ref": "#/components/schemas/ProductPrice"
+                    },
+                    "imageUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "ProductMaterial": {
+                "type": "object",
+                "properties": {
+                    "productMaterialId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "materialId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "productId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "gemStone": {
+                        "$ref": "#/components/schemas/GemStone"
+                    },
+                    "metalType": {
+                        "$ref": "#/components/schemas/MetalType"
+                    },
+                    "materialWeight": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "materialSize": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "metal": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "ProductPrice": {
+                "type": "object",
+                "properties": {
+                    "productPriceId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "productId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalMetalCost": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totalGemstoneCost": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "laborCost": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "markupPercentage": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "salePrice": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "SilverPriceRateDto": {
+                "type": "object",
+                "properties": {
+                    "silverOunceInVnd": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "gmtOuncePriceUsdUpdated": {
+                        "type": "string"
+                    },
+                    "usdToVnd": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "gmtVndUpdated": {
+                        "type": "string"
+                    },
+                    "gramToOunceFormula": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "silverGramInUsd": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "silverGramInVnd": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "GoldPriceRateDto": {
+                "type": "object",
+                "properties": {
+                    "ouncePriceUsd": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "gmtOuncePriceUsdUpdated": {
+                        "type": "string"
+                    },
+                    "usdToVnd": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "gmtVndUpdated": {
+                        "type": "string"
+                    },
+                    "ounceInVnd": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "gramToOunceFormula": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "gramInUsd": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "gramInVnd": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "accountId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "ADMIN",
+                            "MANAGER",
+                            "STAFF",
+                            "CUSTOMER"
+                        ]
+                    },
+                    "fullname": {
+                        "type": "string"
+                    },
+                    "phonenumber": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Invoice": {
+                "type": "object",
+                "properties": {
+                    "invoiceId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "transactionDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "transactionType": {
+                        "type": "string",
+                        "enum": [
+                            "SELL",
+                            "PURCHASE"
+                        ]
+                    },
+                    "customerName": {
+                        "type": "string"
+                    },
+                    "customerPhone": {
+                        "type": "string"
+                    },
+                    "transactionClerk": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "transactionClerkId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totalAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "taxPercent": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "totalDiscount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totalVoucherDiscount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "netAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "paymentDetailsId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "PENDING_PAYMENT",
+                            "PAID",
+                            "CANCELLED"
+                        ]
+                    },
+                    "invoiceItems": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/InvoiceItem"
+                        }
+                    },
+                    "paymentMethod": {
+                        "type": "string",
+                        "enum": [
+                            "CASH",
+                            "EWALLET_VNPAY"
+                        ]
+                    }
+                }
+            },
+            "InvoiceItem": {
+                "type": "object",
+                "properties": {
+                    "invoiceItemId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "invoiceId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "productId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "componentBuy": {
+                        "type": "string"
+                    },
+                    "unitMeasure": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "unitPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "discountPercentage": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "subTotal": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}

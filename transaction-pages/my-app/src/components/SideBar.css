@@ -1,0 +1,34 @@
+/* SideBar.css */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-link .fa-icon {
+  margin-right: 10px;
+}
+
+.collapse .nav-link {
+  padding-left: 20px;
+}
+
+.nav-link.active {
+  background-color: #add8e6;
+  color: white;
+}
+
+.company-name {
+  font-size: 0.9rem;
+  color: #1e90ff; /* Darker blue */
+}

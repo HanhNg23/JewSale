@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="EntryApplication" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.jewelry.JewelryBackendApplication" />
+    <module name="backend" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

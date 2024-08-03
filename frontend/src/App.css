@@ -1,0 +1,805 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+* {
+  margin: 0px;
+}
+body {
+  font-family: "Nunito", sans-serif !important;
+  background: #ebe9e9;
+  overflow-x: hidden;
+}
+
+body.dark {
+  background: #071739;
+}
+::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #0858f7 !important;
+}
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.btn-blue {
+  background: #0858f7 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  text-transform: capitalize !important;
+  border-radius: 5px !important;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+body.dark header {
+  background: #112143 !important;
+}
+
+header .logo {
+  text-decoration: none;
+}
+header .logo img {
+  width: 45px;
+}
+header .logo span {
+  color: #292929;
+  font-weight: 800;
+  font-size: 24px;
+}
+header button.rounded-circle {
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: #f0f5ff !important;
+  color: #0858f7;
+}
+header button.rounded-circle svg {
+  color: #292929;
+  font-size: 18px !important;
+  transition: all 0.2s ease-in-out;
+}
+header button.rounded-circle:hover svg {
+  color: #0858f7 !important;
+}
+
+body.dark header button.rounded-circle {
+  background: #112755 !important;
+}
+body.dark header button.rounded-circle svg {
+  color: #fff !important;
+}
+body.dark header .logo span {
+  color: #fff !important;
+  opacity: 0.8;
+}
+.searchBox {
+  width: 400px;
+  height: 40px;
+  background: #f0f5ff;
+  border-radius: 6px;
+  padding: 3px 15px;
+}
+.searchBox input {
+  background: transparent;
+  border: 0px;
+  outline: none;
+  padding-left: 5px;
+  font-size: 15px;
+  color: #292929;
+}
+.searchBox input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+.searchBox svg {
+  font-size: 19px;
+  color: #292929;
+}
+
+body.dark .searchBox {
+  background: #12254e;
+}
+body.dark .searchBox input,
+body.dark .searchBox input::-webkit-input-placeholder,
+body.dark .searchBox svg {
+  color: rgba(255, 255, 255, 0.7);
+}
+.myAcc {
+  text-align: left !important;
+  color: #0858f7 !important;
+  text-transform: capitalize !important;
+}
+.userImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #0858f7;
+  padding: 2px;
+  border-radius: 100%;
+}
+.userImg .rounded-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.userImg .rounded-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.myAcc .userInfo {
+  padding-left: 10px;
+}
+.myAcc .userInfo h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: #292929;
+}
+.myAcc .userInfo p {
+  margin-top: 0px;
+  font-size: 12px;
+  color: black;
+  opacity: 0.7;
+}
+
+body.dark .myAcc .userInfo * {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+body.dark .MuiPaper-elevation {
+  background-color: #12254e !important;
+}
+body.dark .MuiPaper-elevation li *,
+body.dark .MuiPaper-elevation li {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#account-menu li {
+  font-size: 14px !important;
+  padding: 12px 15px !important;
+}
+#account-menu li svg {
+  font-size: 20px !important;
+}
+
+#notifications .MuiPaper-elevation {
+  right: 240px !important;
+  width: 300px;
+  left: auto !important;
+  top: 70px !important;
+}
+
+.dropdown_list .head {
+  padding: 10px 0px;
+  margin-left: 10px;
+}
+.dropdown_list .head h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+body.dark .dropdown_list .head h4 {
+  color: rgba(255, 255, 255, 0.8);
+}
+.dropdown_list li.MuiButtonBase-root {
+  background: #ebf6ff !important;
+  color: black !important;
+  padding: 10px 15px;
+}
+.dropdown_list li.MuiButtonBase-root:hover {
+  background-color: #d9dbe0 !important;
+}
+body.dark .dropdown_list li.MuiButtonBase-root {
+  background-color: #12254e !important;
+  background: #12254e;
+}
+
+.dropdownInfo {
+  padding-left: 15px;
+}
+.dropdownInfo h4 {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: break-spaces;
+  line-height: 21px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.dropdownInfo h4 b {
+  font-weight: 600;
+  margin-right: 5px;
+}
+.dropdownInfo p {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 0px;
+}
+
+.text-sky {
+  color: #0858f7 !important;
+}
+
+.dropdown_list .scroll {
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.main .sidebarWrapper {
+  width: 20%;
+  flex: 0 0 20%;
+  transition: all 0.3s;
+}
+.main .sidebarWrapper.toggle {
+  width: 0%;
+  flex: 0 0 0%;
+}
+.main .sidebarWrapper .sidebar {
+  width: 20%;
+  height: 100vh;
+  max-height: calc(100% - 70px);
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  background: #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+  transition: all 0.3s;
+}
+.main .sidebarWrapper.toggle .sidebar {
+  left: -100%;
+}
+body.dark .main .sidebarWrapper .sidebar {
+  background: #112143 !important;
+}
+.main .sidebarWrapper .sidebar ul {
+  margin-bottom: 0px;
+  padding: 10px 15px;
+}
+.main .sidebarWrapper .sidebar ul li {
+  list-style: none;
+}
+.main .sidebarWrapper .sidebar ul li button {
+  color: #5e5d72 !important;
+  text-align: left;
+  justify-content: left;
+  border-radius: 10px !important;
+  padding: 12px 10px !important;
+  align-items: center;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 15px;
+}
+
+.main .sidebarWrapper .sidebar::-webkit-scrollbar {
+  width: 3px !important;
+}
+.main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb {
+  background: transparent !important;
+}
+.main .sidebarWrapper .sidebar:hover .sidebar::-webkit-scrollbar {
+  background: #0858f7 !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.main .sidebarWrapper .sidebar ul li button .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.main .sidebarWrapper .sidebar ul li button .icon svg {
+  font-size: 22px;
+}
+.main .sidebarWrapper .sidebar ul li button * {
+  color: #5e5d72 !important;
+}
+.main .sidebarWrapper .sidebar ul li button .arrow {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  transition: all 0.3 ease-in-out;
+}
+.main .sidebarWrapper .sidebar ul li button:hover {
+  background: #f1f1f1 !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button.active {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.main .sidebarWrapper .sidebar ul li button.active {
+  background: #f1f1f1 !important;
+}
+.main .sidebarWrapper .sidebar ul li button.active .icon svg {
+  color: #0858f7 !important;
+}
+.main .sidebarWrapper .sidebar ul li button.active .arrow {
+  transform: rotate(90deg);
+}
+
+.main .sidebarWrapper .sidebar ul .submenu {
+  padding: 0px 45px;
+  position: relative;
+  transition: all 0.3s;
+  height: 0px;
+  cursor: pointer;
+}
+.main .sidebarWrapper .sidebar ul .submenu::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  background: rgba(0, 0, 0, 0.2);
+}
+body.dark .main .sidebarWrapper .sidebar ul .submenu::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.main .sidebarWrapper .sidebar ul .submenu li {
+  width: 100%;
+  list-style: none;
+}
+.main .sidebarWrapper .sidebar ul .submenu li a {
+  color: #5e5d72 !important;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.main .sidebarWrapper .sidebar ul .submenu li a:hover {
+  color: #0858f7 !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a:hover {
+  color: #0858f7 !important;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper {
+  transition: all 0.4s;
+  height: 0xp;
+  overflow: hidden;
+  opacity: 0;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapsed .submenu {
+  opacity: 0;
+}
+
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse {
+  height: auto;
+  overflow: inherit;
+  opacity: 1;
+  padding: 10px 0px;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse .submenu {
+  opacity: 1;
+  height: auto;
+}
+
+.logoutWrapper {
+  padding: 0px 25px;
+}
+.logoutWrapper .logoutBox {
+  width: 100%;
+  height: auto100px;
+  padding: 25px;
+  background: #bcd2fd;
+  border-radius: 10px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark .logoutWrapper .logoutBox {
+  background-image: linear-gradient(#183e8c, #163474) !important ;
+  background: transparent;
+}
+
+.logoutWrapper .logoutBox::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  background: #0858f7;
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  opacity: 0.5;
+}
+.logoutWrapper .logoutBox::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: #0858f7;
+  border-radius: 100%;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  opacity: 0.5;
+}
+.logoutWrapper .logoutBox button {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+.logoutWrapper .logoutBox button svg {
+  margin-right: 6px;
+  font-size: 18px !important;
+}
+
+.main .content {
+  width: 80%;
+  flex: 0 0 80%;
+  transition: all 0.3s;
+}
+.main .content.toggle {
+  width: 100%;
+  flex: 0 0 100%;
+}
+.right-content {
+  padding: 90px 30px;
+  padding-bottom: 10px;
+}
+
+.card {
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+.card .hd {
+  font-size: 18px;
+  font-weight: bold;
+  color: #403e57;
+  margin-top: 30px;
+}
+body.dark .card {
+  background: #112143 !important;
+}
+body.dark .card .hd {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #403e57;
+}
+.cardFilters .col-md-2 h4 {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: #403e57;
+}
+.card .col-md-7 h6 {
+  font-weight: 800;
+}
+.card .row .col-md-5 h6 {
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #403e57;
+}
+h4 {
+  line-height: 36px;
+}
+p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+body.dark .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+body.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+  color: rgba(255, 255, 255, 0.9) !important ;
+}
+
+body.dark .css-1d3z3hw-MuiOutLinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #ccc !important;
+}
+body.dark .table-responsive::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.table .thead-dark th {
+  background-color: #1866ee !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  font-size: 13px !important;
+  color: #ebf6ff;
+}
+.table .tbody td {
+  font-size: 14px !important;
+  color: #2e2d33;
+  font-weight: 500;
+}
+
+.table tbody .actions button {
+  min-width: 32px !important;
+  width: 32px;
+  height: 32px !important;
+}
+.table tbody .actions button svg {
+  font-size: 32px !important;
+}
+
+.table tbody .actions button.secondary {
+  background: rgba(203, 60, 231, 0.2) !important;
+}
+.table tbody .actions button.success {
+  background: rgba(26, 159, 83, 0.2) !important;
+}
+.table tbody .actions button.error {
+  background: rgba(241, 17, 51, 0.2) !important;
+}
+
+table.v-align td {
+  vertical-align: middle !important;
+}
+
+.table td .old,
+.table td .new {
+  display: block;
+  width: 100%;
+}
+
+table td .imgWrapper {
+  width: 25%;
+  flex: 0 0 25%;
+}
+table td .info {
+  width: 75%;
+  flex: 0 0 75%;
+}
+table td .info h6 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 550;
+  margin-bottom: 0px;
+}
+table td .info p {
+  font-size: 13px;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #5e5d72;
+  margin-bottom: 0px;
+}
+table.v-align td .productBox {
+  width: 250px;
+}
+
+.tableFooter {
+  padding-bottom: 20px;
+}
+.tableFooter .pagination {
+  margin-left: auto;
+}
+
+.tableFooter p {
+  font-size: 14px;
+  font-weight: 500;
+}
+body.dark table td {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: #0858f7;
+}
+body.dark .table-bordered td .table-bordered th {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+body.dark .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.sliderBar .slick-slide {
+  padding-right: 10px;
+}
+.sliderBar .slick-slide .item {
+  border-radius: 7px !important;
+  overflow: hidden;
+}
+
+.sliderSml *,
+.sliderBig * {
+  transition: all 0.2 !important;
+}
+.sliderBig .item {
+  overflow: hidden;
+  border-radius: 7px;
+}
+
+.productDetailsSection .productInfo .icon {
+  width: 30%;
+  flex: 0 0 30%;
+}
+.productDetailsSection .productInfo .icon svg {
+  font-size: 22px;
+}
+.productDetailsSection .productInfo .name {
+  width: 70%;
+  flex: 0 0 70%;
+  font-weight: 600;
+  font-size: 15px;
+}
+.productDetailsSection .productInfo .row {
+  margin-bottom: 10px !important;
+}
+.productDetailsSection .productInfo .row .col-sm-7 {
+  display: flex;
+  align-items: center;
+}
+.productDetailsSection .productInfo .row .col-sm-7 span {
+  opacity: 0.8;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+.breadcrumbs_ a:hover {
+  text-decoration: none;
+}
+body.dark .breadcrumbs_ a {
+  background-color: #112143 !important;
+}
+body.dark .breadcrumbs_ a* {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+body.dark .breadcrumbs_ li .MuiChip-filled {
+  background-color: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.p-4 .col-md-2 span {
+  font-weight: 650;
+  margin-left: 10px;
+}
+.p-4 .col-md-1 svg {
+  margin-left: 20px;
+}
+
+.right-content {
+  margin-top: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.breadcrumbs_ {
+  margin-right: 15px;
+}
+
+.productDetailsSection {
+  padding: 20px;
+  background: #fff;
+}
+
+.productInfo .row {
+  margin-bottom: 10px;
+}
+
+.productInfo span {
+  font-weight: bold;
+  color: #555;
+}
+
+.sliderWrapper {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.sliderWrapper h6 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.sliderBig .item img,
+.sliderSml .item img {
+  border-radius: 5px;
+}
+
+button {
+  border-radius: 5px;
+  text-transform: none;
+}
+
+button .MuiButton-label {
+  display: flex;
+  align-items: center;
+}
+
+button .MuiButton-label .MuiButton-startIcon {
+  margin-right: 5px;
+}
+
+.MuiTextField-root,
+.MuiFormControl-root {
+  margin-bottom: 20px;
+}
+
+.MuiFormHelperText-root {
+  color: red;
+}
+
+.MuiFormControl-root .MuiInputLabel-root {
+  color: #555;
+}
+
+.MuiFormControl-root .MuiSelect-select {
+  padding: 12px;
+}
+
+.MuiButton-containedPrimary {
+  background: #007bff;
+  color: white;
+}
+
+.MuiButton-containedPrimary:hover {
+  background: #0056b3;
+}
+.show-mask > .ant-image .ant-image-mask {
+  opacity: 1 !important;
+}
